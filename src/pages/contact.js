@@ -1,7 +1,9 @@
-import React from "react"
+import React from "react";
+import Layout from "../components/layout";
+
 const ContactPage = () => {
   return (
-    <div>
+    <Layout>
       <h1>Contact us</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quasi
@@ -11,8 +13,8 @@ const ContactPage = () => {
           https://twitter.com/aivirth_dev
         </a>
       </p>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default ContactPage
+export default ContactPage;

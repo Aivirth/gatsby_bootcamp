@@ -1,8 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+
 const AboutPage = () => {
   return (
-    <div>
+    <Layout>
       <h1>About us</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officia
@@ -13,8 +15,8 @@ const AboutPage = () => {
       <p>
         <Link to="/contact">Contact us</Link>
       </p>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default AboutPage
+export default AboutPage;
