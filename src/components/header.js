@@ -1,10 +1,22 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 import headerStyles from "./header.module.scss";
 
 const Header = () => {
   const { header, title, navList, activeNavItem } = headerStyles;
+
+  const sqlData = useStaticQuery(
+    graphql`
+      query headerData {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  );
 
   const siteLinks = [
     {
@@ -28,7 +40,7 @@ const Header = () => {
     <header className={header}>
       <h1>
         <Link to="/" className={title}>
-          Aivirth gatsby site
+          {sqlData.site.siteMetadata.title}
         </Link>
       </h1>
       <nav>
