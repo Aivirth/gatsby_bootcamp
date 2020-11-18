@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 
 const BlogPage = () => {
   const blogPostsQuery = useStaticQuery(
@@ -12,6 +12,9 @@ const BlogPage = () => {
               frontmatter {
                 title
                 date
+              }
+              fields {
+                slug
               }
             }
           }
@@ -27,6 +30,9 @@ const BlogPage = () => {
       <li key={index}>
         <h2>{title}</h2>
         <p>{date}</p>
+        <p>
+          <Link to={`/blog/${edge.node.fields.slug}`}>go to article</Link>
+        </p>
       </li>
     );
   });
