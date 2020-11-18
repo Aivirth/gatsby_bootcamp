@@ -20,11 +20,11 @@ const BlogPage = () => {
     `
   );
 
-  const posts = blogPostsQuery.allMarkdownRemark.edges.map(edge => {
+  const posts = blogPostsQuery.allMarkdownRemark.edges.map((edge, index) => {
     const { title, date } = edge.node.frontmatter;
 
     return (
-      <li>
+      <li key={index}>
         <h2>{title}</h2>
         <p>{date}</p>
       </li>
