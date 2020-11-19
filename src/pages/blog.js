@@ -12,6 +12,7 @@ const BlogPage = () => {
             node {
               title
               publishedDate(formatString: "MMMM Do, YYYY")
+              slug
             }
           }
         }

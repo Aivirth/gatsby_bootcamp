@@ -2,27 +2,33 @@ import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 
+// export const currPostQuery = graphql`
+//   query($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       frontmatter {
+//         title
+//         date
+//       }
+//       html
+//     }
+//   }
+// `;
+
 export const currPostQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        date
-      }
-      html
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      publishedDate(formatString: "MMMM Do, YYYY")
     }
   }
 `;
 
 const Blog = props => {
-  const postData = props.data.markdownRemark;
-  const { title, date } = postData.frontmatter;
-
+  const { title, publishedDate } = props.data.contentfulBlogPost;
   return (
     <Layout>
       <h1>{title}</h1>
-      <p>{date}</p>
-      <div dangerouslySetInnerHTML={{ __html: postData.html }}></div>
+      <p>{publishedDate}</p>
     </Layout>
   );
 };
