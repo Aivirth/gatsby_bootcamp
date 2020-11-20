@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
+import Head from "../components/head";
 
 const ContactPage = () => {
   return (
     <Layout>
+      <Head pageTitle="Contact" />
       <h1>Contact us</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quasi

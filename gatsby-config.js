@@ -10,6 +10,7 @@ module.exports = {
     author: "Aivirth",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-contentful",
       options: {

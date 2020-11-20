@@ -3,17 +3,16 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 import Head from "../components/head";
 
-const IndexPage = () => {
+const NotFound = () => {
   return (
     <Layout>
-      <Head pageTitle="Home" />
-      <h1>Hello</h1>
-      <h2>Fullstack developer</h2>
+      <Head pageTitle="404" />
+      <h1>Page not found</h1>
       <p>
-        Need a developer ? <Link to="/contact">click here</Link>
+        <Link to="/">Head to home</Link>
       </p>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default NotFound;
